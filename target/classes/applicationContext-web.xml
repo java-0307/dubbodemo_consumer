@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="dubbodemo_consumer"></dubbo:application>
+
+    <dubbo:registry address="zookeeper://192.168.47.129:2181"></dubbo:registry>
+
+    <dubbo:annotation package="com.itheima.controller"></dubbo:annotation>
+    <!--测试环境时最好配置，也就是默认为true，启动有先后顺序，必须先启动生产者，在启动消费者,启动受检false,生产环境就不用配置。-->
+    <!--<dubbo:consumer check="false"></dubbo:consumer>-->
+    <!--或者是用注解-->
+</beans>
